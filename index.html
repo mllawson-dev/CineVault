@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVault — The Movie Collection</title>
+ 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+ 
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+ 
+<!-- NAV -->
+<nav>
+  <div class="logo"><span>Cine</span>Vault</div>
+  <div class="nav-right">The Movie Collection</div>
+</nav>
+ 
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg" aria-hidden="true"></div>
+  <p class="hero-eyebrow">&#9654; Now Streaming</p>
+  <h1 class="hero-title">The Greatest<br><em>Films Ever Made</em></h1>
+  <p class="hero-sub">A curated collection of cinema's finest — sorted any way you like.</p>
+</section>
+ 
+<!-- CONTROLS -->
+<div class="controls-bar">
+  <div class="results-count">Showing <strong id="count">0</strong> films</div>
+  <div class="sort-row">
+    <span class="sort-label">Sort by:</span>
+    <button class="sort-btn active" onclick="sortMovies('az', this)">A &rarr; Z</button>
+    <button class="sort-btn" onclick="sortMovies('za', this)">Z &rarr; A</button>
+    <button class="sort-btn" onclick="sortMovies('newest', this)">Newest First</button>
+    <button class="sort-btn" onclick="sortMovies('oldest', this)">Oldest First</button>
+  </div>
+</div>
+ 
+<!-- MOVIES GRID -->
+<main>
+  <div class="movies-grid" id="moviesGrid"></div>
+</main>
+ 
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <div class="logo"><span>Cine</span>Vault</div>
+      <p>A passion project dedicated to celebrating the art of cinema — from the silent era to today's streaming age. Every frame tells a story.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="#">All Films</a></li>
+        <li><a href="#">Drama</a></li>
+        <li><a href="#">Thriller</a></li>
+        <li><a href="#">Sci-Fi</a></li>
+        <li><a href="#">Crime</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Our Curation</a></li>
+        <li><a href="#">Submit a Film</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 CineVault &mdash; All rights reserved</p>
+    <span class="footer-tagline">"Cinema is a mirror by which we often see ourselves." &mdash; Martin Scorsese</span>
+  </div>
+</footer>
+ 
+<!-- JavaScript -->
+<script src="index.js" defer></script>
+ 
+</body>
+</html>
