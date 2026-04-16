@@ -4,22 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>CineVault — The Movie Collection</title>
- 
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
- 
+
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
- 
+
 <!-- NAV -->
 <nav>
   <div class="logo"><span>Cine</span>Vault</div>
   <div class="nav-right">The Movie Collection</div>
 </nav>
- 
+
 <!-- HERO -->
 <section class="hero">
   <div class="hero-bg" aria-hidden="true"></div>
@@ -27,11 +27,29 @@
   <h1 class="hero-title">The Greatest<br><em>Films Ever Made</em></h1>
   <p class="hero-sub">A curated collection of cinema's finest — sorted any way you like.</p>
 </section>
- 
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+  <div class="search-input-wrap">
+    <span class="search-icon">&#9906;</span>
+    <input
+      type="text"
+      id="searchInput"
+      class="search-input"
+      placeholder="Search any movie via OMDb&hellip;"
+      autocomplete="off"
+      oninput="handleSearchInput(this.value)"
+      onkeydown="if(event.key==='Enter') triggerSearch()"
+    />
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
+  </div>
+  <button class="search-submit" onclick="triggerSearch()">Search</button>
+</div>
+
 <!-- CONTROLS -->
 <div class="controls-bar">
   <div class="results-count">Showing <strong id="count">0</strong> films</div>
-  <div class="sort-row">
+  <div class="sort-row" id="sortRow">
     <span class="sort-label">Sort by:</span>
     <button class="sort-btn active" onclick="sortMovies('az', this)">A &rarr; Z</button>
     <button class="sort-btn" onclick="sortMovies('za', this)">Z &rarr; A</button>
@@ -39,12 +57,12 @@
     <button class="sort-btn" onclick="sortMovies('oldest', this)">Oldest First</button>
   </div>
 </div>
- 
+
 <!-- MOVIES GRID -->
 <main>
   <div class="movies-grid" id="moviesGrid"></div>
 </main>
- 
+
 <!-- FOOTER -->
 <footer>
   <div class="footer-main">
@@ -77,9 +95,9 @@
     <span class="footer-tagline">"Cinema is a mirror by which we often see ourselves." &mdash; Martin Scorsese</span>
   </div>
 </footer>
- 
+
 <!-- JavaScript -->
 <script src="index.js" defer></script>
- 
+
 </body>
 </html>
