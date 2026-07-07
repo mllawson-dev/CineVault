@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineVault — The Movie Collection</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="movies-site.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="logo" onclick="goHome()" aria-label="CineVault Home"><span>Cine</span>Vault</a>
+  <div class="nav-center" id="genreNav">
+    <button class="genre-tab active" onclick="filterGenre('Top20', this)">Top 20</button>
+    <button class="genre-tab" onclick="filterGenre('Drama', this)">Drama</button>
+    <button class="genre-tab" onclick="filterGenre('Crime', this)">Crime</button>
+    <button class="genre-tab" onclick="filterGenre('Thriller', this)">Thriller</button>
+    <button class="genre-tab" onclick="filterGenre('Sci-Fi', this)">Sci-Fi</button>
+  </div>
+  <div class="nav-right">
+    <button class="nav-icon-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle theme">&#9790;</button>
+    <button class="nav-icon-btn watchlist-btn" onclick="toggleWatchlistPanel()" title="My Watchlist">
+      &#9733; <span id="watchlistCount">0</span>
+    </button>
+  </div>
+</nav>
+
+<!-- FEATURED HERO -->
+<section class="hero" id="featuredHero">
+  <div class="hero-backdrop" id="heroBackdrop"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-eyebrow" id="heroEyebrow">&#9654; Featured Film</p>
+    <h1 class="hero-title" id="heroTitle">The Greatest<br><em>Films Ever Made</em></h1>
+    <p class="hero-sub" id="heroSub">A curated collection of cinema's finest — click any film to explore.</p>
+    <div class="hero-actions" id="heroActions">
+      <button class="btn-hero-primary" id="heroDetailBtn">View Details</button>
+      <button class="btn-hero-ghost" id="heroWatchBtn">+ Watchlist</button>
+    </div>
+    <div class="hero-dots" id="heroDots"></div>
+  </div>
+</section>
+
+<!-- SEARCH BAR -->
+<div class="search-bar">
+  <div class="search-input-wrap">
+    <span class="search-icon">&#9906;</span>
+    <input
+      type="text"
+      id="searchInput"
+      class="search-input"
+      placeholder="Search any movie via OMDb&hellip;"
+      autocomplete="off"
+      oninput="handleSearchInput(this.value)"
+      onkeydown="if(event.key==='Enter') triggerSearch()"
+    />
+    <button class="search-clear" id="searchClear" onclick="clearSearch()" aria-label="Clear search">&#10005;</button>
+  </div>
+  <button class="search-submit" onclick="triggerSearch()">Search</button>
+</div>
+
+<!-- CONTROLS -->
+<div class="controls-bar">
+  <div class="results-count">Showing <strong id="count">0</strong> films</div>
+  <div class="sort-row" id="sortRow">
+    <span class="sort-label">Sort by:</span>
+    <button class="sort-btn active" onclick="sortMovies('az', this)">A &rarr; Z</button>
+    <button class="sort-btn" onclick="sortMovies('za', this)">Z &rarr; A</button>
+    <button class="sort-btn" onclick="sortMovies('newest', this)">Newest First</button>
+    <button class="sort-btn" onclick="sortMovies('oldest', this)">Oldest First</button>
+    <button class="sort-btn" onclick="sortMovies('rating', this)">Top Rated</button>
+  </div>
+</div>
+
+<!-- MOVIES GRID -->
+<main>
+  <div class="movies-grid" id="moviesGrid"></div>
+</main>
+
+<!-- MOVIE DETAIL MODAL -->
+<div class="modal-overlay" id="modalOverlay" onclick="closeModal(event)">
+  <div class="modal" id="modal">
+    <button class="modal-close" onclick="closeModalDirect()">&#10005;</button>
+    <div class="modal-poster-col">
+      <img id="modalPoster" src="" alt="" class="modal-poster-img" />
+      <div class="modal-poster-fallback" id="modalPosterFallback"></div>
+      <button class="modal-watchlist-btn" id="modalWatchBtn" onclick="toggleWatchlistFromModal()">+ Add to Watchlist</button>
+    </div>
+    <div class="modal-info-col">
+      <div class="modal-badges" id="modalBadges"></div>
+      <h2 class="modal-title" id="modalTitle"></h2>
+      <div class="modal-meta" id="modalMeta"></div>
+      <p class="modal-plot" id="modalPlot"></p>
+      <div class="modal-details" id="modalDetails"></div>
+      <div class="modal-ratings" id="modalRatings"></div>
+      <a class="modal-trailer-btn" id="modalTrailerBtn" href="#" target="_blank" rel="noopener">&#9654; Watch Trailer on YouTube</a>
+    </div>
+  </div>
+</div>
+
+<!-- WATCHLIST PANEL -->
+<div class="watchlist-panel" id="watchlistPanel">
+  <div class="watchlist-header">
+    <h3>My Watchlist</h3>
+    <button onclick="toggleWatchlistPanel()">&#10005;</button>
+  </div>
+  <div class="watchlist-body" id="watchlistBody"></div>
+</div>
+<div class="watchlist-backdrop" id="watchlistBackdrop" onclick="toggleWatchlistPanel()"></div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="#" class="logo" onclick="goHome()"><span>Cine</span>Vault</a>
+      <p>A passion project dedicated to celebrating the art of cinema — from the silent era to today's streaming age. Every frame tells a story.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="#" onclick="return goHome()">Top 20</a></li>
+        <li><a href="#" onclick="filterGenre('Drama', null); return false;">Drama</a></li>
+        <li><a href="#" onclick="filterGenre('Thriller', null); return false;">Thriller</a></li>
+        <li><a href="#" onclick="filterGenre('Sci-Fi', null); return false;">Sci-Fi</a></li>
+        <li><a href="#" onclick="filterGenre('Crime', null); return false;">Crime</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#">Our Curation</a></li>
+        <li><a href="#">Submit a Film</a></li>
+        <li><a href="#">Newsletter</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CineVault &mdash; All rights reserved</p>
+    <span class="footer-tagline">"Cinema is a mirror by which we often see ourselves." &mdash; Martin Scorsese</span>
+  </div>
+</footer>
+
+<script src="movies-site.js" defer></script>
+</body>
+</html>
