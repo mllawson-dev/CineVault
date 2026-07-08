@@ -12,13 +12,14 @@
 
 <!-- NAV -->
 <nav>
-  <a href="#" class="logo" onclick="goHome()" aria-label="CineVault Home"><span>Cine</span>Vault</a>
+  <a href="#" class="logo" onclick="goHome(); return false;" aria-label="CineVault Home"><span>Cine</span>Vault</a>
   <div class="nav-center" id="genreNav">
     <button class="genre-tab active" onclick="filterGenre('Top20', this)">Top 20</button>
     <button class="genre-tab" onclick="filterGenre('Drama', this)">Drama</button>
     <button class="genre-tab" onclick="filterGenre('Crime', this)">Crime</button>
     <button class="genre-tab" onclick="filterGenre('Thriller', this)">Thriller</button>
     <button class="genre-tab" onclick="filterGenre('Sci-Fi', this)">Sci-Fi</button>
+    <a href="about.html" class="nav-about" id="aboutNavLink">About</a>
   </div>
   <div class="nav-right">
     <button class="nav-icon-btn" onclick="toggleTheme()" id="themeBtn" title="Toggle theme">&#9790;</button>
@@ -115,7 +116,7 @@
 <footer>
   <div class="footer-main">
     <div class="footer-brand">
-      <a href="#" class="logo" onclick="goHome()"><span>Cine</span>Vault</a>
+      <a href="#" class="logo" onclick="goHome(); return false;"><span>Cine</span>Vault</a>
       <p>A passion project dedicated to celebrating the art of cinema — from the silent era to today's streaming age. Every frame tells a story.</p>
     </div>
     <div class="footer-col">
@@ -131,10 +132,11 @@
     <div class="footer-col">
       <h4>About</h4>
       <ul>
-        <li><a href="#">Our Curation</a></li>
-        <li><a href="#">Submit a Film</a></li>
-        <li><a href="#">Newsletter</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="about.html">About CineVault</a></li>
+        <li><a href="about.html#story">Our Story</a></li>
+        <li><a href="about.html#how">How It Works</a></li>
+        <li><a href="about.html#timeline">Cinema Timeline</a></li>
+        <li><a href="about.html#contact">Contact</a></li>
       </ul>
     </div>
   </div>

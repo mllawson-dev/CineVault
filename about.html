@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About — CineVault</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400;1,700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- Shared stylesheet — same file as the main site -->
+  <link rel="stylesheet" href="movies-site.css">
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="movies-site-standalone.html" class="logo"><span>Cine</span>Vault</a>
+  <ul class="nav-links">
+    <li><a href="movies-site-standalone.html">Home</a></li>
+    <li><a href="#story">Our Story</a></li>
+    <li><a href="#how">How It Works</a></li>
+    <li><a href="#timeline">Timeline</a></li>
+    <li><a href="#quotes">Quotes</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div style="display:flex; align-items:center; gap:0.5rem;">
+    <button class="nav-icon-btn" onclick="toggleAboutTheme()" id="themeBtn" title="Toggle theme">&#9790;</button>
+    <a href="movies-site-standalone.html" class="nav-back">&#8592; Back to Films</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<header class="about-hero">
+  <div class="about-hero-bg"></div>
+  <div class="film-strip" aria-hidden="true">
+    <div class="film-frame"></div><div class="film-frame"></div>
+    <div class="film-frame"></div><div class="film-frame"></div>
+    <div class="film-frame"></div><div class="film-frame"></div>
+  </div>
+  <div class="about-hero-content">
+    <p class="about-eyebrow">&#9654; About CineVault</p>
+    <h1 class="about-hero-title">Where Every Frame<br><em>Tells a Story</em></h1>
+    <p class="about-hero-lead">CineVault is a curated digital archive born from a deep love of cinema. It's not just a database — it's a living tribute to the directors, writers, and actors who dared to dream on a grand scale and changed the way we see the world.</p>
+  </div>
+</header>
+
+<!-- OUR STORY -->
+<section class="section" id="story">
+  <div class="story-grid">
+    <div class="story-visual reveal">
+      <div>
+        <span class="story-visual-icon">🎬</span>
+        <p class="story-visual-text">Cinema began as a carnival trick<br>and became the art of the century.</p>
+      </div>
+      <div class="story-visual-accent"></div>
+      <div class="story-visual-year">Est. 1895</div>
+    </div>
+    <div class="reveal">
+      <p class="section-eyebrow">Our Story</p>
+      <h2 class="section-title">A Passion Project<br>Built in the <em>Dark</em></h2>
+      <div class="section-body">
+        <p>CineVault started the way all great things do — quietly, in the dark, with a screen glowing and a story unfolding. What began as a personal list of films scribbled in a notebook evolved into this: a fully interactive cinematic archive powered by live data, built with nothing but curiosity, code, and an unreasonable love for movies.</p>
+        <p>Every film catalogued here earned its place. These aren't just popular titles — they are works of art that shifted culture, challenged conventions, and proved that storytelling is the most powerful technology humanity has ever invented.</p>
+        <p>This project was built as part of a Front-End Web Development course, combining HTML, CSS, and JavaScript with real-world API integration to create something that feels less like a school assignment and more like a destination.</p>
+      </div>
+      <div class="story-pillars">
+        <div class="story-pillar reveal">
+          <h4>Curation</h4>
+          <p>Every title hand-selected for cultural weight, critical acclaim, and lasting impact on cinema.</p>
+        </div>
+        <div class="story-pillar reveal">
+          <h4>Live Data</h4>
+          <p>Powered by the OMDb API, pulling real ratings, plots, and posters directly from IMDb's database.</p>
+        </div>
+        <div class="story-pillar reveal">
+          <h4>Discovery</h4>
+          <p>Search any movie ever made. Our OMDb integration gives you access to thousands of titles instantly.</p>
+        </div>
+        <div class="story-pillar reveal">
+          <h4>Craft</h4>
+          <p>Built from scratch — no frameworks, no templates. Pure HTML, CSS, and vanilla JavaScript.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-grid">
+    <div class="stat-item">
+      <div class="stat-number" data-target="500000">0</div>
+      <div class="stat-label">Films on OMDb</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="130">0</div>
+      <div class="stat-label">Years of Cinema</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="20">0</div>
+      <div class="stat-label">Curated Masterpieces</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-number" data-target="4">0</div>
+      <div class="stat-label">Genres Explored</div>
+    </div>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section class="section section-alt" id="how">
+  <div class="reveal">
+    <p class="section-eyebrow">How It Works</p>
+    <h2 class="section-title">Built on Real Data,<br><em>Driven by Code</em></h2>
+    <p class="section-body">CineVault doesn't store movie data locally — it reaches out to the world's largest film database in real time. Here's what's happening under the hood every time you browse, search, or click.</p>
+  </div>
+  <div class="how-grid">
+    <div class="how-card reveal">
+      <div class="how-number">01</div>
+      <span class="how-icon">🌐</span>
+      <h3>OMDb API Integration</h3>
+      <p>Every poster, rating, plot summary, cast list, and award citation you see is fetched live from the Open Movie Database (OMDb) — a community-built mirror of IMDb data. The same source Hollywood uses.</p>
+      <span class="how-tag">REST API</span>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-number">02</div>
+      <span class="how-icon">⚡</span>
+      <h3>Smart Caching</h3>
+      <p>Once a film is fetched, its data is cached in memory for the session. Switching genres, re-sorting, and re-opening modals all happen instantly — no redundant network calls, no waiting.</p>
+      <span class="how-tag">JavaScript</span>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-number">03</div>
+      <span class="how-icon">🔍</span>
+      <h3>Universal Search</h3>
+      <p>The search bar connects directly to OMDb's search endpoint, returning up to 12 results for any query. Each result is then enriched with a second API call to fetch its full detail record.</p>
+      <span class="how-tag">Fetch API</span>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-number">04</div>
+      <span class="how-icon">🎭</span>
+      <h3>Genre Curation</h3>
+      <p>Each genre tab loads a hand-curated list of IMDb IDs representing the Top 10 films in that category. The IDs are resolved to full detail objects via OMDb, ensuring always-current data.</p>
+      <span class="how-tag">Curated Data</span>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-number">05</div>
+      <span class="how-icon">⭐</span>
+      <h3>Watchlist Persistence</h3>
+      <p>Your personal watchlist is saved to the browser's localStorage — meaning it survives page refreshes and browser restarts, no login or server required. Pure client-side persistence.</p>
+      <span class="how-tag">localStorage</span>
+    </div>
+    <div class="how-card reveal">
+      <div class="how-number">06</div>
+      <span class="how-icon">🎨</span>
+      <h3>Pure Vanilla Stack</h3>
+      <p>No React. No Vue. No Bootstrap. CineVault is built entirely with semantic HTML5, modern CSS (custom properties, grid, flexbox), and vanilla ES6+ JavaScript — a showcase of the web's native power.</p>
+      <span class="how-tag">HTML · CSS · JS</span>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section class="section" id="timeline">
+  <div class="reveal">
+    <p class="section-eyebrow">Cinema History</p>
+    <h2 class="section-title">A Century of<br><em>Moving Images</em></h2>
+    <p class="section-body">From the flicker of a kinetoscope to the glow of a 4K OLED screen, cinema has always been humanity's most immersive form of storytelling. Here are the eras that shaped everything we watch today.</p>
+  </div>
+  <div class="timeline-wrap">
+
+    <div class="tl-item reveal">
+      <div class="tl-era">1895<br>– 1927</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <h3 class="tl-title">The Silent Era</h3>
+        <div class="tl-years">1895 — 1927</div>
+        <p class="tl-desc">Cinema was born without a voice, yet somehow it screamed louder than anything before it. The Lumière brothers projected their first film in Paris in 1895 — a 50-second clip of workers leaving a factory that stunned audiences who had never seen moving images. From this seed grew the earliest grammar of film: the cut, the close-up, the iris fade. Directors like D.W. Griffith pioneered narrative technique, while Charlie Chaplin turned physical comedy into poetry.</p>
+        <div class="tl-films">
+          <span class="tl-film-tag">Metropolis (1927)</span>
+          <span class="tl-film-tag">The General (1926)</span>
+          <span class="tl-film-tag">Nosferatu (1922)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-era">1927<br>– 1960</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <h3 class="tl-title">The Golden Age of Hollywood</h3>
+        <div class="tl-years">1927 — 1960</div>
+        <p class="tl-desc">Sound arrived in 1927 and remade cinema overnight. The studio system reached its peak — MGM, Paramount, Warner Bros., and RKO manufactured dreams on an industrial scale. Genre was king: the western, the musical, the screwball comedy, the noir thriller. Stars like Humphrey Bogart, Ingrid Bergman, and Jimmy Stewart became cultural icons. Casablanca, Citizen Kane, and Sunset Boulevard were born in this era — films that still define what a "great movie" means.</p>
+        <div class="tl-films">
+          <span class="tl-film-tag">Casablanca (1942)</span>
+          <span class="tl-film-tag">Citizen Kane (1941)</span>
+          <span class="tl-film-tag">Rear Window (1954)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-era">1960<br>– 1980</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <h3 class="tl-title">The New Hollywood Revolution</h3>
+        <div class="tl-years">1960 — 1980</div>
+        <p class="tl-desc">The old studio system crumbled and a generation of renegades took over. Inspired by the French New Wave, directors like Coppola, Scorsese, Kubrick, and Altman broke every rule they'd inherited. Films became personal, political, and morally ambiguous. The Godfather redefined the crime epic. 2001: A Space Odyssey expanded what cinema could ask of its audience. This was the decade that proved the director was the true author of a film.</p>
+        <div class="tl-films">
+          <span class="tl-film-tag">The Godfather (1972)</span>
+          <span class="tl-film-tag">2001: A Space Odyssey (1968)</span>
+          <span class="tl-film-tag">Goodfellas (1990)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-era">1980<br>– 2000</div>
+      <div class="tl-dot"></div>
+      <div class="tl-content">
+        <h3 class="tl-title">The Blockbuster Era</h3>
+        <div class="tl-years">1980 — 2000</div>
+        <p class="tl-desc">Spielberg and Lucas invented the modern blockbuster, and Hollywood was never the same. Films became events. Budgets exploded. Special effects evolved from practical genius to digital revolution. Yet amid the spectacle, auteurs persisted — Tarantino reinvented crime fiction with Pulp Fiction, the Coens dissected the American myth, and Schindler's List reminded us that cinema could bear witness to history's darkest chapters.</p>
+        <div class="tl-films">
+          <span class="tl-film-tag">Pulp Fiction (1994)</span>
+          <span class="tl-film-tag">Schindler's List (1993)</span>
+          <span class="tl-film-tag">The Matrix (1999)</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="tl-item reveal">
+      <div class="tl-era">2000<br>– Now</div>
+      <div class="tl-dot" style="border-color: var(--gold); background: var(--gold);"></div>
+      <div class="tl-content">
+        <h3 class="tl-title">The Digital &amp; Global Age</h3>
+        <div class="tl-years">2000 — Present</div>
+        <p class="tl-desc">Digital filmmaking democratised the art form. Christopher Nolan pushed IMAX to its limits. Streaming platforms dissolved the theatrical monopoly. And cinema became truly global — Parasite became the first non-English film to win the Oscar for Best Picture, a long-overdue acknowledgment that great storytelling has no passport. The definition of a "movie" is being rewritten in real time, and the best chapters may still be ahead.</p>
+        <div class="tl-films">
+          <span class="tl-film-tag">Inception (2010)</span>
+          <span class="tl-film-tag">Parasite (2019)</span>
+          <span class="tl-film-tag">Oppenheimer (2023)</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- QUOTE WALL -->
+<section class="section section-alt" id="quotes">
+  <div class="quotes-intro reveal">
+    <p class="section-eyebrow">Iconic Lines</p>
+    <h2 class="section-title">Words That<br><em>Outlived the Screen</em></h2>
+    <p class="section-body">Some lines escape the cinema and become part of the language itself. These are the words that have been quoted at dinner tables, written on walls, and whispered in the dark long after the credits rolled.</p>
+  </div>
+  <div class="quotes-grid">
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">I'm going to make him an offer he can't refuse.</p>
+      <div class="quote-film">The Godfather</div>
+      <div class="quote-year">Francis Ford Coppola, 1972</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">Get busy living, or get busy dying.</p>
+      <div class="quote-film">The Shawshank Redemption</div>
+      <div class="quote-year">Frank Darabont, 1994</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">Why so serious?</p>
+      <div class="quote-film">The Dark Knight</div>
+      <div class="quote-year">Christopher Nolan, 2008</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">You can't handle the truth!</p>
+      <div class="quote-film">A Few Good Men</div>
+      <div class="quote-year">Rob Reiner, 1992</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">We accept the love we think we deserve.</p>
+      <div class="quote-film">The Perks of Being a Wallflower</div>
+      <div class="quote-year">Stephen Chbosky, 2012</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">After all, tomorrow is another day.</p>
+      <div class="quote-film">Gone with the Wind</div>
+      <div class="quote-year">Victor Fleming, 1939</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">To infinity and beyond.</p>
+      <div class="quote-film">Toy Story</div>
+      <div class="quote-year">John Lasseter, 1995</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">You is kind, you is smart, you is important.</p>
+      <div class="quote-film">The Help</div>
+      <div class="quote-year">Tate Taylor, 2011</div>
+    </div>
+    <div class="quote-card reveal">
+      <div class="quote-mark">&ldquo;</div>
+      <p class="quote-text">Every passing minute is another chance to turn it all around.</p>
+      <div class="quote-film">Vanilla Sky</div>
+      <div class="quote-year">Cameron Crowe, 2001</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="section" id="contact">
+  <div class="contact-grid">
+    <div>
+      <p class="section-eyebrow reveal">Get in Touch</p>
+      <h2 class="section-title reveal">Let's Talk<br><em>About Film</em></h2>
+      <div class="section-body reveal">
+        <p>Have a film you think belongs in the vault? A quote we missed? A suggestion, a correction, or just want to geek out about cinema? Send a message — every one gets read.</p>
+      </div>
+      <div style="margin-top: 2.5rem;">
+        <div class="contact-detail reveal">
+          <span class="contact-detail-icon">🎬</span>
+          <div>
+            <div class="contact-detail-label">Project</div>
+            <div class="contact-detail-value">Module 7 — React Final Project<br>HTML · CSS · JavaScript · React ·OMDb API</div>
+          </div>
+        </div>
+        <div class="contact-detail reveal">
+          <span class="contact-detail-icon">📡</span>
+          <div>
+            <div class="contact-detail-label">Data Source</div>
+            <div class="contact-detail-value">Open Movie Database (OMDb)<br>omdbapi.com</div>
+          </div>
+        </div>
+        <div class="contact-detail reveal">
+          <span class="contact-detail-icon">⚙️</span>
+          <div>
+            <div class="contact-detail-label">Built With</div>
+            <div class="contact-detail-value">Vanilla JavaScript · CSS Custom Properties<br>CSS Grid · Flexbox · Fetch API · localStorage</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="reveal">
+      <div class="contact-form" id="contactForm">
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label" for="fname">First Name</label>
+            <input class="form-input" type="text" id="fname" placeholder="Jane" />
+          </div>
+          <div class="form-group">
+            <label class="form-label" for="lname">Last Name</label>
+            <input class="form-input" type="text" id="lname" placeholder="Doe" />
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="email">Email Address</label>
+          <input class="form-input" type="email" id="email" placeholder="you@example.com" />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="subject">Subject</label>
+          <input class="form-input" type="text" id="subject" placeholder="Film suggestion, feedback, etc." />
+        </div>
+        <div class="form-group">
+          <label class="form-label" for="message">Message</label>
+          <textarea class="form-textarea" id="message" placeholder="Tell us about a film that changed your life&hellip;"></textarea>
+        </div>
+        <div id="formSuccess" class="form-success">&#10003;&nbsp; Message sent! Thanks for reaching out.</div>
+        <p class="form-note">This is a demo form — submissions are handled client-side only.</p>
+        <button class="form-submit" onclick="submitForm()">Send Message</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-main">
+    <div class="footer-brand">
+      <a href="movies-site-standalone.html" class="logo"><span>Cine</span>Vault</a>
+      <p>A passion project dedicated to celebrating the art of cinema — from the silent era to today's streaming age. Every frame tells a story.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Browse</h4>
+      <ul>
+        <li><a href="movies-site-standalone.html">Top 20</a></li>
+        <li><a href="movies-site-standalone.html">Drama</a></li>
+        <li><a href="movies-site-standalone.html">Thriller</a></li>
+        <li><a href="movies-site-standalone.html">Sci-Fi</a></li>
+        <li><a href="movies-site-standalone.html">Crime</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>About</h4>
+      <ul>
+        <li><a href="#story">Our Story</a></li>
+        <li><a href="#how">How It Works</a></li>
+        <li><a href="#timeline">Cinema Timeline</a></li>
+        <li><a href="#quotes">Quote Wall</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2025 CineVault &mdash; All rights reserved</p>
+    <span class="footer-tagline">"Cinema is a mirror by which we often see ourselves." &mdash; Martin Scorsese</span>
+  </div>
+</footer>
+
+<script>
+  // ── THEME — reads from the same localStorage key as the main site ──
+  function initAboutTheme() {
+    const saved = localStorage.getItem('cinevault_theme');
+    if (saved === 'light') {
+      document.body.classList.add('light');
+      document.getElementById('themeBtn').textContent = '☀';
+    }
+  }
+
+  function toggleAboutTheme() {
+    document.body.classList.toggle('light');
+    const isLight = document.body.classList.contains('light');
+    document.getElementById('themeBtn').textContent = isLight ? '☀' : '☾';
+    localStorage.setItem('cinevault_theme', isLight ? 'light' : 'dark');
+  }
+
+  // ── SCROLL REVEAL ──
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.1 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // ── ANIMATED COUNTERS ──
+  function animateCounter(el, target, duration = 1800) {
+    const isLarge = target >= 1000;
+    const start   = performance.now();
+    function update(now) {
+      const progress = Math.min((now - start) / duration, 1);
+      const eased    = 1 - Math.pow(1 - progress, 3);
+      const current  = Math.floor(eased * target);
+      if (isLarge) {
+        el.textContent = current >= 1000 ? Math.floor(current / 1000) + 'K+' : current;
+      } else {
+        el.textContent = current + (progress >= 1 && target === 130 ? '+' : '');
+      }
+      if (progress < 1) requestAnimationFrame(update);
+      else el.textContent = isLarge ? Math.round(target / 1000) + 'K+' : target + (target === 130 ? '+' : '');
+    }
+    requestAnimationFrame(update);
+  }
+
+  const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        document.querySelectorAll('.stat-number').forEach(el => animateCounter(el, parseInt(el.dataset.target)));
+        statsObserver.disconnect();
+      }
+    });
+  }, { threshold: 0.3 });
+  const statsSection = document.querySelector('.stats-section');
+  if (statsSection) statsObserver.observe(statsSection);
+
+  // ── CONTACT FORM ──
+  function submitForm() {
+    const fname   = document.getElementById('fname').value.trim();
+    const email   = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    if (!fname || !email || !message) {
+      alert('Please fill in at least your name, email, and message.');
+      return;
+    }
+    const successEl = document.getElementById('formSuccess');
+    successEl.style.display = 'block';
+    ['fname','lname','email','subject','message'].forEach(id => { document.getElementById(id).value = ''; });
+    setTimeout(() => { successEl.style.display = 'none'; }, 5000);
+  }
+
+  // ── INIT ──
+  initAboutTheme();
+</script>
+</body>
+</html>
